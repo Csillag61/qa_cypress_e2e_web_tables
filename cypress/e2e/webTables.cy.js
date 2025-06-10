@@ -77,7 +77,7 @@ describe('Web Tables page', () => {
     cy.get('.rt-tbody')
       .children()
       .each(($row) => {
-        cy.wrap($row).find('div').should('not.have.text'); // Ensure table cells have no text
+        cy.wrap($row).should('have.text', ''); // Ensure table cells have no text
       });
 
     cy.log('All workers have been deleted successfully.');
